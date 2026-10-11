@@ -15,5 +15,6 @@ Notable user-visible changes are recorded here. A prepared package version is no
 - Added a real terminal demo recorded with Charm VHS, with a portable tape, disposable fixture launcher, and `npm run demo` regeneration command.
 - Reordered the demo to expanded live tool-heavy work → OMP Zen card → Ctrl+O → continued compact work → tagline, using real sequential validation batches instead of held completion screens.
 - Tightened the demo into short live clips and applied Dracula to both the recording frame and recording-only OMP instance; personal theme settings are unchanged.
+- Added a six-second opening explanation of normal expanded OMP and five-second OMP Zen/tagline cards, while retaining short live work clips.
 
 Runtime and regression tests were extracted from the existing optional capability's live worktree, audited against OMP 18.8.7. Historical source-worktree observations are summarized in [coverage](docs/COVERAGE.md); they do not establish standalone package verification. Public remote creation, npm publication, and OMP listing/feature acceptance have not occurred as part of this preparation.
