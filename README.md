@@ -1,8 +1,8 @@
-# Compact Tool Calls
+# OMP Zen
 
-Busy agent sessions can turn into a wall of tool output. Sometimes you just want to know **what ran, where, and whether it finished**.
+Give your OMP session a little breathing room.
 
-Compact Tool Calls gives eligible OMP tool calls a quieter, one-line view. When you want the output, press **Ctrl+O** to open the native details again.
+Busy agent sessions can turn into a wall of tool output. OMP Zen keeps eligible tool calls on one quiet line, so you can see **what ran, where, and whether it finished**. Press **Ctrl+O** whenever you want the full details.
 
 [Get started](#try-it-in-your-next-session) · [Coverage](docs/COVERAGE.md) · [Contributing](CONTRIBUTING.md)
 
@@ -24,7 +24,7 @@ You'll need **OMP 18.8.7** and **Bun 1.3.14 or newer**. That's the exact compati
 From a local checkout, start OMP with its absolute path:
 
 ```sh
-omp --extension /absolute/path/to/omp-compact-tool-calls
+omp --extension /absolute/path/to/omp-zen
 ```
 
 This loads the extension for that launch. It doesn't install a global plugin or change your permissions. To turn it off, start your next session without the flag.
@@ -34,15 +34,15 @@ This loads the extension for that launch. It doesn't install a global plugin or 
 Want it available across your projects? You can optionally link the checkout:
 
 ```sh
-omp plugin link /absolute/path/to/omp-compact-tool-calls
+omp plugin link /absolute/path/to/omp-zen
 ```
 
 Linking is **user-scoped** and changes your user plugin state. Restart OMP after linking. To stop loading the linked plugin, disable or uninstall it and restart:
 
 ```sh
-omp plugin disable omp-compact-tool-calls
+omp plugin disable omp-zen
 # Or remove the link:
-omp plugin uninstall omp-compact-tool-calls
+omp plugin uninstall omp-zen
 ```
 
 <details>
@@ -51,7 +51,7 @@ omp plugin uninstall omp-compact-tool-calls
 The package isn't published to npm yet. Once it is published under this name:
 
 ```sh
-omp plugin install omp-compact-tool-calls
+omp plugin install omp-zen
 ```
 
 For now, use the local checkout above.
@@ -94,4 +94,4 @@ For maintainers, [release and listing notes](docs/FEATURE-SUBMISSION.md) cover p
 
 ## License
 
-[MIT](LICENSE), © 2026 Compact Tool Calls contributors.
+[MIT](LICENSE), © 2026 OMP Zen contributors.

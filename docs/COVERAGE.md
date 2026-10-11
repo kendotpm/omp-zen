@@ -1,6 +1,6 @@
 # Coverage and native boundaries
 
-Compact Tool Calls targets **OMP 18.8.7** and **Bun >=1.3.14**. It is opt-in presentation for the **main interactive TUI only**. Child agents, print, JSON, RPC, and no-UI sessions retain native behavior. No later host version has been validated here.
+OMP Zen targets **OMP 18.8.7** and **Bun >=1.3.14**. It is opt-in presentation for the **main interactive TUI only**. Child agents, print, JSON, RPC, and no-UI sessions retain native behavior. No later host version has been validated here.
 
 “Supported” below means implemented compact registration for an eligible active, builtin-owned, schema-compatible tool—not proof that every backend and configuration has been exercised. Unsupported means **native UI**, never a disabled tool. Provider/plugin-added tools and competing extension overrides are left alone.
 

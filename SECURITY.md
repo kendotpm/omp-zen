@@ -1,12 +1,12 @@
 # Security
 
-Compact Tool Calls runs as trusted code inside OMP, not in a sandbox. Only load a checkout or package you trust. The compatibility target is OMP **18.8.7** with Bun **>=1.3.14**; there is no separate long-term support policy or guarantee for future host versions.
+OMP Zen runs as trusted code inside OMP, not in a sandbox. Only load a checkout or package you trust. The compatibility target is OMP **18.8.7** with Bun **>=1.3.14**; there is no separate long-term support policy or guarantee for future host versions.
 
 ## What this extension changes
 
 The extension changes how eligible tool calls appear in the main interactive TUI. It delegates execution to OMP through `ctx.invokeTool(args)`, retaining native permission decisions, output, cancellation, and job ownership. Runtime registration provenance is extension-owned even though execution is native. It is not a security boundary, permission bypass, output sanitizer, or replacement for OMP's policies.
 
-If something looks wrong, stop the session and relaunch without the `--extension` flag. If linked as a plugin, use `omp plugin disable omp-compact-tool-calls` or `omp plugin uninstall omp-compact-tool-calls`, then restart. Do not treat a compact status line as proof of an operation's safety; expand and inspect the native result.
+If something looks wrong, stop the session and relaunch without the `--extension` flag. If linked as a plugin, use `omp plugin disable omp-zen` or `omp plugin uninstall omp-zen`, then restart. Do not treat a compact status line as proof of an operation's safety; expand and inspect the native result.
 
 ## Report a sensitive finding
 

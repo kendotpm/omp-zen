@@ -1,7 +1,7 @@
 {
-  "name": "omp-compact-tool-calls",
+  "name": "omp-zen",
   "version": "0.1.0",
-  "description": "Compact, expandable tool-call presentation for the Oh My Pi terminal UI.",
+  "description": "Give your OMP session a little breathing room with compact, expandable tool calls.",
   "type": "module",
   "license": "MIT",
   "main": "./index.ts",
@@ -23,6 +23,7 @@
     "tui",
     "tool-calls",
     "compact",
+    "zen",
     "coding-agent"
   ],
   "files": [

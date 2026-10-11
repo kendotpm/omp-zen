@@ -19,7 +19,7 @@ vi.mock("@oh-my-pi/pi-tui", () => ({
   truncateToWidth: (value: string, width: number) => Array.from(value).slice(0, width).join(""),
   wrapTextWithAnsi: (value: string, width: number) => [Array.from(value).slice(0, width).join("")],
 }));
-import compactToolCalls from "../index";
+import ompZen from "../index";
 
 const schema = Object.assign((value: any) => value, { toJsonSchema: () => ({ type: "object" }) });
 function harness(names = ["glob"]) {
@@ -38,7 +38,7 @@ function harness(names = ["glob"]) {
     },
   };
   const ctx = { cwd: "/fixture", hasUI: true, mode: "tui", agent: { kind: "main" } };
-  compactToolCalls(api as any);
+  ompZen(api as unknown as Parameters<typeof ompZen>[0]);
   return { api, handlers, definitions, infos, active, ctx };
 }
 

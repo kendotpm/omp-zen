@@ -9,6 +9,14 @@
 
 These are local checks on macOS. The repository includes Linux GitHub Actions CI, but hosted CI has not run.
 
+## OMP Zen brand cutover
+
+The local repository directory and package are now `omp-zen`. After the rename, `npm run check` passed all 23 tests, the native loader smoke, and the 14-file package allowlist. The renamed `omp-zen-0.1.0.tgz` also imported successfully through OMP's real loader.
+
+A fresh OMP 18.8.7 ANSI session loaded the renamed directory with `--extension`, showed `glob · *.ts · done`, and returned `OMP_ZEN_LOADED`. Ctrl+O revealed the native nine-file result tree. The controlled terminal was closed afterward. Harness distribution validation also passed; bundled harness launch paths were not renamed.
+
+Only branding, packaging identity, and documentation changed. Earlier file/shell and packed-artifact observations below retain their original harmless test markers.
+
 ## Fresh terminal workflow
 
 The standalone checkout was loaded by the real **OMP 18.8.7** CLI in an ANSI terminal. Ambient extensions, skills, rules, and LSP were disabled for this run; the standalone directory was explicitly enabled with `--extension`. The session was ephemeral (`--no-session`, `--no-title`), with only native `glob` and `bash` available. No personal settings or plugin registration were changed.

@@ -18,7 +18,7 @@ const supported = [
   "memory_edit", "retain", "learn", "manage_skill",
 ] as const;
 
-export default function compactToolCalls(pi: ExtensionAPI): void {
+export default function ompZen(pi: ExtensionAPI): void {
   let current: ExtensionContext;
   // Metadata only: getters follow the active lifecycle context, not a stale cwd/model.
   const session = {

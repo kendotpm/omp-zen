@@ -16,7 +16,7 @@ const runtime = [
 const required = [...runtime, "package.json", "README.md", "LICENSE", "CHANGELOG.md", "CONTRIBUTING.md", "SECURITY.md"];
 const allowed = new Set(required);
 
-assert.equal(manifest.name, "omp-compact-tool-calls");
+assert.equal(manifest.name, "omp-zen");
 assert.match(manifest.version, /^\d+\.\d+\.\d+(?:-[\da-z.-]+)?(?:\+[\da-z.-]+)?$/i, "A release needs a semantic version");
 assert.notEqual(manifest.private, true);
 assert.equal(manifest.type, "module");

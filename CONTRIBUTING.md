@@ -18,7 +18,7 @@ npm run check:package
 These commands cover regression tests, real OMP module loading, and the package contract. The loader smoke makes no model request and does not execute tools; it is not a substitute for seeing the extension in a real interactive session. Launch without changing your installed plugins:
 
 ```sh
-omp --extension /absolute/path/to/omp-compact-tool-calls
+omp --extension /absolute/path/to/omp-zen
 ```
 
 Use a disposable project and isolated settings/journal for experiments. Do not change personal permissions, enable paid services, or write to shared resources just to make a test pass. See [coverage and validation boundaries](docs/COVERAGE.md) before choosing a tool to exercise.

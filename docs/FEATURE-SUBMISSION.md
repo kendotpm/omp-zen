@@ -1,6 +1,6 @@
 # Public release and OMP submission
 
-This is a release guide, not evidence of publication or a featured listing. Compact Tool Calls is currently prepared as a local standalone extension. Public remote ownership, npm name availability, publishing authority, and any OMP submission are still pending decisions.
+This is a release guide, not evidence of publication or a featured listing. OMP Zen is currently prepared as a local standalone extension. Public remote ownership, npm name availability, publishing authority, and any OMP submission are still pending decisions.
 
 ## Use OMP's native package model
 
@@ -14,7 +14,7 @@ The package declares its extension through `package.json`:
 }
 ```
 
-OMP's plugin loader imports those declared extension entries. Local checkout loading needs no marketplace, global install, or private configuration. A user-scoped `omp plugin link /absolute/path/to/omp-compact-tool-calls` is optional and mutates the user's plugin state; restart to load the extension.
+OMP's plugin loader imports those declared extension entries. Local checkout loading needs no marketplace, global install, or private configuration. A user-scoped `omp plugin link /absolute/path/to/omp-zen` is optional and mutates the user's plugin state; restart to load the extension.
 
 The official [marketplace documentation](https://github.com/can1357/oh-my-pi/blob/v18.8.7/docs/marketplace.md) describes catalog discovery and Git/local sources. The [installer plumbing documentation](https://github.com/can1357/oh-my-pi/blob/v18.8.7/docs/plugin-manager-installer-plumbing.md) describes native `omp.extensions` discovery, npm installs, and local links. These documents were also consulted through OMP's built-in documentation surfaces. Check the current upstream docs before release in case the submission process has changed.
 
@@ -22,14 +22,14 @@ A single plugin does **not** need its own self-hosted marketplace catalog. An ex
 
 ## Short listing text
 
-> Compact Tool Calls keeps eligible OMP tool calls to a readable tool · target · status line, with native Ctrl+O expansion when you want the details. It runs as an opt-in extension in the main interactive TUI and delegates execution, permissions, output, cancellation, and jobs to OMP. Compatibility target: OMP 18.8.7, Bun >=1.3.14. Some tools and state-sensitive configurations deliberately retain native UI. MIT licensed.
+> Give your OMP session a little breathing room. OMP Zen keeps eligible tool calls to a readable tool · target · status line, with native Ctrl+O expansion when you want the details. It runs as an opt-in extension in the main interactive TUI and delegates execution, permissions, output, cancellation, and jobs to OMP. Compatibility target: OMP 18.8.7, Bun >=1.3.14. Some tools and state-sensitive configurations deliberately retain native UI. MIT licensed.
 
 Use this text only alongside the actual release artifact and [coverage limits](COVERAGE.md). Do not add “official,” “featured,” universally compatible, token-saving, or context-compression claims.
 
 ## Before making it public
 
 - Confirm who owns the public remote and who maintains the project; do not invent a repository URL.
-- Check npm name availability at release time. `omp-compact-tool-calls` is the local manifest name, not a reserved or published namespace.
+- Check npm name availability at release time. `omp-zen` is the local manifest name, not a reserved or published namespace.
 - Confirm permission to release all extracted code and dependencies. MIT was selected for this repository; license choice is not confirmation of third-party rights or access to a publishing account.
 - Decide release/tag and npm account authority, credential handling, two-factor protection, and who can approve future releases. The MIT license permits reuse but does not appoint the official maintainer.
 - Run `npm ci`, `npm test`, `npm run check:package`, and the integrated package smoke. Review the packed file list for accidental profiles, credentials, private configuration, logs, or customer evidence.
@@ -41,7 +41,7 @@ These are release gates, not tasks already completed. No remote creation, push, 
 
 ```sh
 # After publication under this exact name only:
-omp plugin install omp-compact-tool-calls
+omp plugin install omp-zen
 ```
 
 If the published name changes, update commands and metadata before sharing them.

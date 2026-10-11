@@ -9,5 +9,5 @@ const entry = process.argv[2] ? resolve(process.argv[2]) : resolve(root, "index.
 const loaded = await loadExtensions([entry], root);
 assert.deepEqual(loaded.errors, [], "The extension must import and initialize in OMP");
 assert.equal(loaded.extensions.length, 1, "OMP must load the standalone entrypoint");
-console.log("PASS: native OMP loader imported and initialized Compact Tool Calls.");
+console.log("PASS: native OMP loader imported and initialized OMP Zen.");
 console.log("No model, approvals, tool execution, or interactive UI was exercised by this check.");
