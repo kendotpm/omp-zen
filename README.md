@@ -20,4 +20,15 @@ Keep that folder in place. Restart OMP, then run `omp` from any project. Zen loa
 
 Press **Ctrl+O** for details. No build or config editing. Not published yet.
 
+## Configuration
+
+Instead of linking, add this to `~/.omp/agent/config.yml` and restart OMP:
+
+```yaml
+extensions:
+  - /full/path/to/omp-zen
+```
+
+Use your actual folder path. Keep any existing extension entries.
+
 [Setup](docs/SETUP.md) · [Coverage](docs/COVERAGE.md) · [Contributing](CONTRIBUTING.md) · [MIT](LICENSE)

@@ -19,5 +19,7 @@ Notable user-visible changes are recorded here. A prepared package version is no
 - Slimmed the README to the demo and a beginner quickstart; moved optional installation and troubleshooting to `docs/SETUP.md`. Preserved the approved GIF unchanged.
 - Reduced the front-page README to a minimal quickstart; retained complete beginner instructions in the linked setup guide.
 - Made quickstart install the extension with `omp plugin link .`, followed by restart and plain `omp`; moved demonstration-only launch instructions out of the installation path.
+- Replaced scripted validation footage with a real todo-list app build, using the requested Native OMP intro and three-/six-second work clips.
+- Added a concise native `config.yml` example as an alternative to plugin linking.
 
 Runtime and regression tests were extracted from the existing optional capability's live worktree, audited against OMP 18.8.7. Historical source-worktree observations are summarized in [coverage](docs/COVERAGE.md); they do not establish standalone package verification. Public remote creation, npm publication, and OMP listing/feature acceptance have not occurred as part of this preparation.
