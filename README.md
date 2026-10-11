@@ -30,16 +30,4 @@ Run `omp` from your project. Zen loads automatically.
 
 **Ctrl+O** toggles details. Some tools stay native: [coverage](docs/COVERAGE.md).
 
-## Configuration
-
-None needed. OMP remembers the repository and loads Zen automatically.
-
-To update:
-
-```sh
-omp plugin upgrade omp-zen
-```
-
-Restart OMP afterward.
-
 [Setup & removal](docs/SETUP.md) · [Contributing](CONTRIBUTING.md) · [MIT](LICENSE)
