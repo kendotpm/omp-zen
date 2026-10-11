@@ -6,9 +6,9 @@ Busy agent sessions can turn into a wall of tool output. OMP Zen keeps eligible 
 
 [Get started](#try-it-in-your-next-session) · [Coverage](docs/COVERAGE.md) · [Contributing](CONTRIBUTING.md)
 
-![OMP Zen: compact native tool calls, Ctrl+O reveals the full results, then collapses them again](assets/omp-zen.gif)
+![OMP doing tool-heavy work with expanded output, then OMP Zen and Ctrl+O keep the same live work compact](assets/omp-zen.gif)
 
-Same tools. Less noise. Press **Ctrl+O** for the file list, search matches, and command output; press it again to tuck them away.
+Same work. Less noise. Watch OMP check a dozen modules, then press **Ctrl+O** to tuck the output away while the checks keep running. The details are still there whenever you want them.
 
 Recorded in real OMP with [Charm VHS](https://github.com/charmbracelet/vhs). [The tape](demo/zen.tape) is included if you want to make your own.
 

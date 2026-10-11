@@ -25,7 +25,7 @@ Use a disposable project and isolated settings/journal for experiments. Do not c
 
 ## Record the demo
 
-The README animation is a real OMP session recorded with [Charm VHS](https://github.com/charmbracelet/vhs). Install `vhs`, `ttyd`, and `ffmpeg`, plus the JetBrainsMono Nerd Font Mono used by the tape. OMP 18.8.7 and Node must be on PATH; OMP also needs an already configured model provider.
+The README animation is a real OMP session recorded with [Charm VHS](https://github.com/charmbracelet/vhs). Install `vhs`, `ttyd`, `ffmpeg`, and `tmux`, plus the JetBrainsMono Nerd Font Mono used by the tape. OMP 18.8.7 and Node must be on PATH; OMP also needs an already configured model provider.
 
 From the repository root:
 
@@ -35,9 +35,11 @@ npm run demo
 OMP_ZEN_DEMO_MODEL=provider/model npm run demo
 ```
 
+The launcher skips npm's local development-SDK executable when resolving `omp`, so recording uses your installed OMP application. If needed, set `OMP_ZEN_DEMO_OMP` to that executable's absolute path. The tape uses a dedicated `omp-zen-vhs` tmux server in a POSIX environment; this is not a native Windows recording recipe. Don't run two copies of this tape concurrently.
+
 [`demo/zen.tape`](demo/zen.tape) contains the timing and keypresses; [`demo/session.mjs`](demo/session.mjs) launches real OMP with native glob, grep, and bash. It creates harmless files in ignored `.local/demo-workspace`, uses a recording-only appearance overlay, and never copies credentials. No personal settings or global plugin registrations are changed. The configured provider may receive the demo prompt and public fixture contents and charge for the turn.
 
-Setup/model latency is hidden; the compact → native expanded → compact UI sequence is recorded live. Title cards are editorial, not tool output. The finished GIF is `assets/omp-zen.gif`; the MP4 stays under ignored `.local/` for frame inspection. Review every scene and transition for private paths, credentials, customer content, and unexpected dialogs before committing a new recording. Never run `vhs publish` without explicit publication approval.
+Setup/model startup is hidden. The tape opens on expanded OMP performing real syntax checks, detaches from the same still-running tmux session for an editorial OMP Zen card, reattaches, and presses native Ctrl+O while further tool calls run. The final card carries the tagline. Terminal scenes are live, not completed-output stills or replayed transcripts. Title cards are editorial, not tool output. The dedicated tmux server is closed after the checks; if recording is interrupted, close that server manually with `tmux -L omp-zen-vhs kill-server`. The finished GIF is `assets/omp-zen.gif`; the MP4 stays under ignored `.local/` for frame inspection. Review every scene and transition for private paths, credentials, customer content, and unexpected dialogs before committing a new recording. Never run `vhs publish` without explicit publication approval.
 
 ## Keep the change small
 
