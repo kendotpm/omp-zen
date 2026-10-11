@@ -17,5 +17,6 @@ Notable user-visible changes are recorded here. A prepared package version is no
 - Tightened the demo into short live clips and applied Dracula to both the recording frame and recording-only OMP instance; personal theme settings are unchanged.
 - Added a six-second opening explanation of normal expanded OMP and five-second OMP Zen/tagline cards, while retaining short live work clips.
 - Slimmed the README to the demo and a beginner quickstart; moved optional installation and troubleshooting to `docs/SETUP.md`. Preserved the approved GIF unchanged.
+- Reduced the front-page README to a minimal quickstart; retained complete beginner instructions in the linked setup guide.
 
 Runtime and regression tests were extracted from the existing optional capability's live worktree, audited against OMP 18.8.7. Historical source-worktree observations are summarized in [coverage](docs/COVERAGE.md); they do not establish standalone package verification. Public remote creation, npm publication, and OMP listing/feature acceptance have not occurred as part of this preparation.

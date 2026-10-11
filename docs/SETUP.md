@@ -1,6 +1,37 @@
-# Other ways to use OMP Zen
+# OMP Zen setup
 
-The [README quickstart](../README.md#quickstart) loads Zen for one session from its own folder. This guide covers using it elsewhere and keeping it installed.
+The [README quickstart](../README.md#quickstart) is the short version. Start here if you're new to OMP or terminal extensions.
+
+## First time
+
+1. Install [Bun](https://bun.sh/docs/installation), then open a new terminal. Bun must be 1.3.14 or newer.
+2. Install the verified OMP version and check it:
+
+```sh
+bun install --global @oh-my-pi/pi-coding-agent@18.8.7
+omp --version
+```
+
+OMP should report 18.8.7. Run `omp login` and follow the prompts to connect your model provider; you may need a paid account or API key. Newer OMP versions haven't been verified with Zen yet.
+
+3. Unzip the `omp-zen` folder you received if needed. There's no public download yet. Open a terminal in that folder: use your file manager's **Open in Terminal**, or type `cd `, drag the folder into the terminal, and press Enter. You should see `README.md` and `index.ts`.
+4. Launch Zen:
+
+```sh
+omp --extension .
+```
+
+The `.` means “this folder.” No build, `npm install`, or configuration editing is needed.
+
+5. Type this into OMP and press Enter:
+
+```text
+Use glob to list the TypeScript files in this folder. Don't change any files.
+```
+
+A compact tool line appears. Press **Ctrl+O** to reveal the native file list; press it again to collapse it.
+
+To turn Zen off, exit OMP with **Ctrl+D** when the input is empty, then start `omp` without the extension argument.
 
 ## Use it in another project
 
