@@ -1,0 +1,11 @@
+node_modules/
+coverage/
+.vitest/
+*.tgz
+.env
+.env.*
+!.env.example
+.DS_Store
+.local/
+.omp/
+.beads/
