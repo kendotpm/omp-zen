@@ -1,19 +1,16 @@
 # OMP Zen
 
-Give your OMP session a little breathing room.
+>Give your OMP session a little breathing room.
 
 Busy agent sessions can turn into a wall of tool output. OMP Zen keeps eligible tool calls on one quiet line, so you can see **what ran, where, and whether it finished**. Press **Ctrl+O** whenever you want the full details.
 
 [Get started](#try-it-in-your-next-session) · [Coverage](docs/COVERAGE.md) · [Contributing](CONTRIBUTING.md)
 
-Here's a real session, with the results collapsed:
+![OMP Zen: compact native tool calls, Ctrl+O reveals the full results, then collapses them again](assets/omp-zen.gif)
 
-```text
-glob · *.ts · done
-bash · printf 'COMPACT_FIRST\nCOMPACT_SECOND\nCOMPACT_THIRD\n' · done
-```
+Same tools. Less noise. Press **Ctrl+O** for the file list, search matches, and command output; press it again to tuck them away.
 
-Press **Ctrl+O** and the file list and all three output lines come back in OMP's usual view. Press it again to tuck them away. Long targets shorten to fit your terminal; OMP still adds its normal blank spacing.
+Recorded in real OMP with [Charm VHS](https://github.com/charmbracelet/vhs). [The tape](demo/zen.tape) is included if you want to make your own.
 
 [See what we verified](docs/VERIFICATION.md).
 

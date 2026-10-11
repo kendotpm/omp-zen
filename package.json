@@ -37,12 +37,16 @@
     "CHANGELOG.md",
     "CONTRIBUTING.md",
     "SECURITY.md",
+    "assets/omp-zen.gif",
+    "demo/zen.tape",
+    "demo/session.mjs",
     "docs/**/*.md"
   ],
   "scripts": {
     "test": "bun run --bun vitest run",
     "smoke": "bun scripts/smoke.ts",
     "check:package": "node scripts/check-package.mjs",
+    "demo": "vhs demo/zen.tape",
     "check": "npm test && npm run smoke && npm run check:package"
   },
   "peerDependencies": {

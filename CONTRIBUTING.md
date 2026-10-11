@@ -23,6 +23,22 @@ omp --extension /absolute/path/to/omp-zen
 
 Use a disposable project and isolated settings/journal for experiments. Do not change personal permissions, enable paid services, or write to shared resources just to make a test pass. See [coverage and validation boundaries](docs/COVERAGE.md) before choosing a tool to exercise.
 
+## Record the demo
+
+The README animation is a real OMP session recorded with [Charm VHS](https://github.com/charmbracelet/vhs). Install `vhs`, `ttyd`, and `ffmpeg`, plus the JetBrainsMono Nerd Font Mono used by the tape. OMP 18.8.7 and Node must be on PATH; OMP also needs an already configured model provider.
+
+From the repository root:
+
+```sh
+npm run demo
+# Optional: select an already configured model for this run.
+OMP_ZEN_DEMO_MODEL=provider/model npm run demo
+```
+
+[`demo/zen.tape`](demo/zen.tape) contains the timing and keypresses; [`demo/session.mjs`](demo/session.mjs) launches real OMP with native glob, grep, and bash. It creates harmless files in ignored `.local/demo-workspace`, uses a recording-only appearance overlay, and never copies credentials. No personal settings or global plugin registrations are changed. The configured provider may receive the demo prompt and public fixture contents and charge for the turn.
+
+Setup/model latency is hidden; the compact → native expanded → compact UI sequence is recorded live. Title cards are editorial, not tool output. The finished GIF is `assets/omp-zen.gif`; the MP4 stays under ignored `.local/` for frame inspection. Review every scene and transition for private paths, credentials, customer content, and unexpected dialogs before committing a new recording. Never run `vhs publish` without explicit publication approval.
+
 ## Keep the change small
 
 - Keep native execution behind `ctx.invokeTool(args)`. Permissions, results, cancellation, progress, kernels, and background jobs belong to OMP.

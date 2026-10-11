@@ -13,7 +13,7 @@ const runtime = [
   "ordinary-adapters.ts",
   "lifecycle-adapters.ts",
 ];
-const required = [...runtime, "package.json", "README.md", "LICENSE", "CHANGELOG.md", "CONTRIBUTING.md", "SECURITY.md"];
+const required = [...runtime, "package.json", "README.md", "LICENSE", "CHANGELOG.md", "CONTRIBUTING.md", "SECURITY.md", "assets/omp-zen.gif", "demo/zen.tape", "demo/session.mjs"];
 const allowed = new Set(required);
 
 assert.equal(manifest.name, "omp-zen");
@@ -26,7 +26,7 @@ assert.deepEqual(manifest.omp?.extensions, ["./index.ts"]);
 assert.equal(manifest.main, "./index.ts");
 assert.deepEqual(manifest.exports, { ".": "./index.ts" });
 assert.deepEqual(manifest.files, [
-  ...runtime, "README.md", "LICENSE", "CHANGELOG.md", "CONTRIBUTING.md", "SECURITY.md", "docs/**/*.md",
+  ...runtime, "README.md", "LICENSE", "CHANGELOG.md", "CONTRIBUTING.md", "SECURITY.md", "assets/omp-zen.gif", "demo/zen.tape", "demo/session.mjs", "docs/**/*.md",
 ]);
 assert.equal(Object.keys(manifest.dependencies ?? {}).length, 0, "Host packages must not be runtime dependencies");
 assert.equal((manifest.bundledDependencies ?? manifest.bundleDependencies ?? []).length, 0, "Dependencies must not be bundled");
@@ -63,7 +63,12 @@ for (const file of report.files) {
   packed.add(relative);
   const absolute = join(root, relative);
   assert.ok(lstatSync(absolute).isFile(), `Archive entries must be regular files: ${relative}`);
-  assert.ok(!forbiddenPaths.test(readFileSync(absolute, "utf8")), `Local or harness path in archive file: ${relative}`);
+  if (relative.endsWith(".gif")) {
+    const signature = readFileSync(absolute).subarray(0, 6).toString("ascii");
+    assert.ok(signature === "GIF87a" || signature === "GIF89a", `Invalid GIF asset: ${relative}`);
+  } else {
+    assert.ok(!forbiddenPaths.test(readFileSync(absolute, "utf8")), `Local or harness path in archive file: ${relative}`);
+  }
 }
 for (const relative of required) {
   assert.ok(packed.has(relative), `Missing required archive file: ${relative}`);

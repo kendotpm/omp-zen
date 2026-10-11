@@ -17,6 +17,16 @@ A fresh OMP 18.8.7 ANSI session loaded the renamed directory with `--extension`,
 
 Only branding, packaging identity, and documentation changed. Earlier file/shell and packed-artifact observations below retain their original harmless test markers.
 
+## Charm VHS recording
+
+[`assets/omp-zen.gif`](../assets/omp-zen.gif) was rendered from [`demo/zen.tape`](../demo/zen.tape) using VHS 0.11.0 and real OMP 18.8.7. The animation is 1200 × 900, 22.68 seconds, and approximately 151 KiB. It shows three completed native tools (`glob`, `grep`, `bash`), Ctrl+O expansion with the actual file tree/search match/shell syntax-check output, and collapse back to the quiet rows.
+
+The MP4's scene grid and expanded frame were visually inspected. Recorded scenes contain only the public demo prompt, relative fixture paths, results, and editorial title/end cards; no credentials, personal paths, customer content, or approval dialogs were visible. The launcher uses a disposable workspace and recording-only native startup/status appearance settings. It never patches OMP, changes personal permissions, or copies auth. Setup/model latency is omitted; the UI interactions are captured live.
+
+The first tape failed because expanded output did not fit the viewport. A taller viewport and smaller search result corrected the recording. VHS's standalone Screenshot outputs did not reliably follow the requested timestamps, so video frames—not those scratch screenshots—were used for review.
+
+`npm run check` passed 23 tests, native module loading, and the updated **17-file** package allowlist. Only the reviewed GIF, tape, launcher, code, and public Markdown are distributed; the MP4 and temporary capture files remain ignored.
+
 ## Fresh terminal workflow
 
 The standalone checkout was loaded by the real **OMP 18.8.7** CLI in an ANSI terminal. Ambient extensions, skills, rules, and LSP were disabled for this run; the standalone directory was explicitly enabled with `--extension`. The session was ephemeral (`--no-session`, `--no-title`), with only native `glob` and `bash` available. No personal settings or plugin registration were changed.
