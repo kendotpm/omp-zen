@@ -15,6 +15,12 @@ The concise README quickstart was exercised in a real OMP 18.8.7 ANSI session fr
 
 README and optional setup links resolve locally. `npm run check` passed 23 tests, native loading, and the **18-file** package allowlist. The approved GIF's SHA-256 stayed `ca481dc02d611fc3be012de8366e5aee65a7f3597615e0b8d8d0f15fe4338c81`; it was not regenerated or modified.
 
+## Installation-first quickstart
+
+The current quickstart uses `omp plugin link .`, not a one-session demo launch. That exact native command succeeded with plugin state redirected to an ignored disposable home. `omp plugin list` reported enabled `omp-zen`; `omp plugin doctor` reported the plugin healthy, with a benign “package manifest not created yet” warning for a link-only root. Native explicit-home discovery resolved its manifest entry and the real OMP loader imported it without an explicit extension argument. The disposable registration was disabled afterward; personal plugin state was not changed.
+
+The generic discovery helper also observed a personal plugin despite the HOME override, so the smoke used OMP's explicit-home discovery API instead; no unrelated extension was imported. Current README/setup links and the 18-file package allowlist passed; the approved GIF hash remained unchanged.
+
 ## OMP Zen brand cutover
 
 The local repository directory and package are now `omp-zen`. After the rename, `npm run check` passed all 23 tests, the native loader smoke, and the 14-file package allowlist. The renamed `omp-zen-0.1.0.tgz` also imported successfully through OMP's real loader.

@@ -13,11 +13,11 @@ Quiet tool calls for [Oh My Pi](https://omp.sh). Same tools. Details one keypres
 3. Run:
 
 ```sh
-omp --extension .
+omp plugin link .
 ```
 
-Ask OMP to list files. Press **Ctrl+O** to expand or collapse results.
+Keep that folder in place. Restart OMP, then run `omp` from any project. Zen loads automatically.
 
-No build or config editing. Not published yet.
+Press **Ctrl+O** for details. No build or config editing. Not published yet.
 
 [Setup](docs/SETUP.md) · [Coverage](docs/COVERAGE.md) · [Contributing](CONTRIBUTING.md) · [MIT](LICENSE)

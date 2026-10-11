@@ -15,54 +15,35 @@ omp --version
 OMP should report 18.8.7. Run `omp login` and follow the prompts to connect your model provider; you may need a paid account or API key. Newer OMP versions haven't been verified with Zen yet.
 
 3. Unzip the `omp-zen` folder you received if needed. There's no public download yet. Open a terminal in that folder: use your file manager's **Open in Terminal**, or type `cd `, drag the folder into the terminal, and press Enter. You should see `README.md` and `index.ts`.
-4. Launch Zen:
-
-```sh
-omp --extension .
-```
-
-The `.` means “this folder.” No build, `npm install`, or configuration editing is needed.
-
-5. Type this into OMP and press Enter:
-
-```text
-Use glob to list the TypeScript files in this folder. Don't change any files.
-```
-
-A compact tool line appears. Press **Ctrl+O** to reveal the native file list; press it again to collapse it.
-
-To turn Zen off, exit OMP with **Ctrl+D** when the input is empty, then start `omp` without the extension argument.
-
-## Use it in another project
-
-Open a terminal in the project you want OMP to work on. Start OMP with the full path to your Zen folder:
-
-```sh
-omp --extension "/full/path/to/omp-zen"
-```
-
-Replace `/full/path/to/omp-zen` with your folder's actual location. Quotes keep paths containing spaces together. The extension path controls what loads; the terminal's current folder controls where OMP works.
-
-On macOS, you can type `omp --extension ` and drag the Zen folder into the terminal to insert its path. Then press Enter.
-
-Omit the extension argument on the next launch to return to the native view. Don't load both the standalone package and a bundled harness copy in the same session.
-
-## Keep Zen available across projects
-
-From the Zen folder:
+4. Install the local extension:
 
 ```sh
 omp plugin link .
 ```
 
-This creates a user-scoped link to that folder—it doesn't copy it. Keep the folder in place. Close OMP and start it again in your project with `omp`; installed extensions are discovered at startup.
+The `.` means “this folder.” OMP registers a user-scoped link to it, so keep the folder in place. No build, `npm install`, or configuration editing is needed.
 
-Check the registration:
+5. Close any open OMP sessions. Open a terminal in your project folder and run:
+
+```sh
+omp
+```
+
+Zen now loads automatically. Press **Ctrl+O** whenever you want to expand or collapse tool details. Linking doesn't grant additional tool permissions.
+
+## Check the installation
+
+Run these in a terminal:
 
 ```sh
 omp plugin list
 omp plugin doctor
 ```
+
+The list should include `omp-zen`. Restart OMP after installing; an already-open session won't import the newly linked extension. Don't also load a bundled harness copy or add a second `--extension` argument.
+
+## Disable or remove Zen
+
 
 To stop loading it, then restart OMP:
 
@@ -76,7 +57,7 @@ To remove its registration:
 omp plugin uninstall omp-zen
 ```
 
-Linking changes your user plugin state. It doesn't grant additional tool permissions.
+Disabling or uninstalling changes only the plugin registration; the extension folder and your project files remain in place.
 
 ## If the view doesn't change
 
