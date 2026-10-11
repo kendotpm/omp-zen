@@ -2,33 +2,43 @@
 
 > Give your OMP session a little breathing room.
 
-Quiet tool calls for [Oh My Pi](https://omp.sh). Same tools. Details one keypress away.
+A small [Oh My Pi](https://omp.sh) extension that quiets tool calls without hiding their details.
 
 ![OMP Zen demo](assets/omp-zen.gif)
 
-## Quickstart
+## What it does
 
-1. Install **OMP 18.8.7** and connect your model: [setup](docs/SETUP.md).
-2. Open a terminal in the `omp-zen` folder you received.
-3. Run:
+- Keeps supported tool calls on one line.
+- Reveals native details with **Ctrl+O**.
+- Leaves execution, permissions, and agent context unchanged.
+
+## Install
+
+Requires **OMP 18.8.7**; Pi isn't supported. New to OMP? [Start here](docs/SETUP.md).
+
+Open a terminal in your `omp-zen` folder:
 
 ```sh
 omp plugin link .
 ```
 
-Keep that folder in place. Restart OMP, then run `omp` from any project. Zen loads automatically.
+Keep the folder in place. Restart OMP. No build needed; not published yet.
 
-Press **Ctrl+O** for details. No build or config editing. Not published yet.
+## Usage
+
+Run `omp` from your project. Zen loads automatically.
+
+**Ctrl+O** toggles details. Some tools stay native: [coverage](docs/COVERAGE.md).
 
 ## Configuration
 
-Instead of linking, add this to `~/.omp/agent/config.yml` and restart OMP:
+Alternatively, **instead of linking**, add your folder to `~/.omp/agent/config.yml`:
 
 ```yaml
 extensions:
   - /full/path/to/omp-zen
 ```
 
-Use your actual folder path. Keep any existing extension entries.
+Keep existing entries; restart OMP.
 
-[Setup](docs/SETUP.md) · [Coverage](docs/COVERAGE.md) · [Contributing](CONTRIBUTING.md) · [MIT](LICENSE)
+[Setup & removal](docs/SETUP.md) · [Contributing](CONTRIBUTING.md) · [MIT](LICENSE)

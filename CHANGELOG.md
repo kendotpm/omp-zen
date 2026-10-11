@@ -21,5 +21,6 @@ Notable user-visible changes are recorded here. A prepared package version is no
 - Made quickstart install the extension with `omp plugin link .`, followed by restart and plain `omp`; moved demonstration-only launch instructions out of the installation path.
 - Replaced scripted validation footage with a real todo-list app build, using the requested Native OMP intro and three-/six-second work clips.
 - Added a concise native `config.yml` example as an alternative to plugin linking.
+- Adopted the user-selected `pi-btw` README structure in concise form: What it does, Install, Usage, and Configuration; the demo is unchanged.
 
 Runtime and regression tests were extracted from the existing optional capability's live worktree, audited against OMP 18.8.7. Historical source-worktree observations are summarized in [coverage](docs/COVERAGE.md); they do not establish standalone package verification. Public remote creation, npm publication, and OMP listing/feature acceptance have not occurred as part of this preparation.
