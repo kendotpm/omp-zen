@@ -7,7 +7,13 @@
 - `npm run smoke` imported and initialized the extension through OMP's real module loader. It made no model request and did not exercise tool execution or UI.
 - `npm run check:package` passed: **14 allowlisted files**, no bundled host dependencies or private/harness paths. The dry-run check wrote no archive.
 
-These are local checks on macOS. The repository includes Linux GitHub Actions CI, but hosted CI has not run.
+Local checks ran on macOS. The first public GitHub Actions CI run also passed on Linux, including all tests, native loader smoke, and package checks.
+
+## Public GitHub installation
+
+The owner approved public distribution at [kendotpm/omp-zen](https://github.com/kendotpm/omp-zen). The exact README command, `omp plugin install github:kendotpm/omp-zen`, succeeded using OMP 18.8.7 and Bun 1.3.14 with a disposable plugin home. Native `plugin list` reported enabled `omp-zen@0.1.0`; `plugin doctor` returned four checks OK, zero warnings, and zero errors. Native explicit-home discovery and the real OMP loader then initialized the **downloaded package**, not a local link.
+
+Private vulnerability reporting is enabled. The first hosted Linux CI run passed. The approved GIF is unchanged (SHA-256 `9ba4219f9b912201c68c17b722c3f88765af8ef94f24f44c41548310f603463e`). Native OMP GitHub installation is the sole public install route; no npm publication or OMP feature submission occurred.
 
 ## Beginner README quickstart
 
@@ -17,7 +23,7 @@ README and optional setup links resolve locally. `npm run check` passed 23 tests
 
 ## Installation-first quickstart
 
-The current quickstart uses `omp plugin link .`, not a one-session demo launch. That exact native command succeeded with plugin state redirected to an ignored disposable home. `omp plugin list` reported enabled `omp-zen`; `omp plugin doctor` reported the plugin healthy, with a benign “package manifest not created yet” warning for a link-only root. Native explicit-home discovery resolved its manifest entry and the real OMP loader imported it without an explicit extension argument. The disposable registration was disabled afterward; personal plugin state was not changed.
+The earlier local-only quickstart used `omp plugin link .`, not a one-session demo launch. That exact native command succeeded with plugin state redirected to an ignored disposable home. `omp plugin list` reported enabled `omp-zen`; `omp plugin doctor` reported the plugin healthy, with a benign “package manifest not created yet” warning for a link-only root. Native explicit-home discovery resolved its manifest entry and the real OMP loader imported it without an explicit extension argument. The disposable registration was disabled afterward; personal plugin state was not changed.
 
 The generic discovery helper also observed a personal plugin despite the HOME override, so the smoke used OMP's explicit-home discovery API instead; no unrelated extension was imported. Current README/setup links and the 18-file package allowlist passed; the approved GIF hash remained unchanged.
 

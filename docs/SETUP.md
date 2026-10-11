@@ -88,4 +88,4 @@ For a report, include the OMP version, terminal, tool, relevant configuration, a
 
 ## Public installation
 
-Source and releases are hosted at [kendotpm/omp-zen](https://github.com/kendotpm/omp-zen). GitHub installation is the supported public route. The package is not on npm; do not use `omp plugin install omp-zen` until an npm release exists.
+Source is hosted at [kendotpm/omp-zen](https://github.com/kendotpm/omp-zen). Install it through OMP with `omp plugin install github:kendotpm/omp-zen`; no separate package-manager installation is needed.

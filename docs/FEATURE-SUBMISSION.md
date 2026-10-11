@@ -1,6 +1,6 @@
 # Public release and OMP submission
 
-OMP Zen's public source is [kendotpm/omp-zen](https://github.com/kendotpm/omp-zen), released with the owner's explicit approval. GitHub is the initial distribution route; npm publication and an OMP featured listing are separate future decisions.
+OMP Zen's public source is [kendotpm/omp-zen](https://github.com/kendotpm/omp-zen), released with the owner's explicit approval. Native OMP installation from GitHub is the distribution route. An OMP featured listing is a separate decision.
 
 ## Use OMP's native package model
 
@@ -18,7 +18,7 @@ OMP's plugin loader imports the declared extension entry. Public installation us
 
 The official [marketplace documentation](https://github.com/can1357/oh-my-pi/blob/v18.8.7/docs/marketplace.md) describes catalog discovery and Git/local sources. The [installer plumbing documentation](https://github.com/can1357/oh-my-pi/blob/v18.8.7/docs/plugin-manager-installer-plumbing.md) describes native `omp.extensions` discovery, npm installs, and local links. These documents were also consulted through OMP's built-in documentation surfaces. Check the current upstream docs before release in case the submission process has changed.
 
-A single plugin does **not** need its own self-hosted marketplace catalog. An existing marketplace maintainer can list an approved public Git source, pinned to a release revision. Current marketplace documentation says npm catalog sources are parsed but not installable; direct `omp plugin install` of an npm package is a separate route. Do not confuse those paths or generate a catalog merely to appear listed.
+A single plugin does **not** need its own self-hosted marketplace catalog. An existing marketplace maintainer can list an approved public Git source pinned to a release revision. Do not generate a catalog merely to appear listed.
 
 ## Short listing text
 
@@ -29,22 +29,14 @@ Use this text only alongside the actual release artifact and [coverage limits](C
 ## Before another release
 
 - Keep the public repository owner and maintainer metadata accurate.
-- If adding npm distribution, check name availability and publishing authority first. `omp-zen` is not currently published or reserved on npm.
 - Confirm permission to release all extracted code and dependencies. MIT was selected for this repository; license choice is not confirmation of third-party rights or access to a publishing account.
-- Decide release/tag and npm account authority, credential handling, two-factor protection, and who can approve future releases. The MIT license permits reuse but does not appoint the official maintainer.
+- Decide the release revision and who can approve future releases. Keep credentials in the publishing tools, never in repository files.
 - Run `npm ci`, `npm test`, `npm run check:package`, and the integrated package smoke. Review the packed file list for accidental profiles, credentials, private configuration, logs, or customer evidence.
 - Validate an actual OMP 18.8.7 main TUI session using the packed/installed artifact. Record version, surface, configuration, real outcomes, and exact limits; do not promote fixture tests into backend proof.
 - After packaging smoke, capture a short **redacted real demo** showing collapsed calls, Ctrl+O details, and an honest native-preserved case. Use disposable fixtures, not customer or personal session data. An illustrative text sample is not a recording.
 - Update changelog/coverage with observed evidence and make the release artifact reproducible before requesting review.
 
-The initial GitHub repository and source push were explicitly approved. Further releases should keep the evidence and source in sync. npm publication and an OMP feature submission still need separate approval. An npm install command becomes valid only after that package actually exists:
-
-```sh
-# After publication under this exact name only:
-omp plugin install omp-zen
-```
-
-If the published name changes, update commands and metadata before sharing them.
+The initial GitHub repository and source push were explicitly approved. Further releases should keep the evidence and source in sync. Use the native OMP GitHub command in the README as the sole public installation route. An OMP feature submission still needs separate approval.
 
 ## Asking OMP maintainers to consider it
 
