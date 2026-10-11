@@ -23,5 +23,6 @@ Notable user-visible changes are recorded here.
 - Added a concise native `config.yml` example as an alternative to plugin linking.
 - Adopted the user-selected `pi-btw` README structure in concise form: What it does, Install, Usage, and Configuration; the demo is unchanged.
 - Published the source at `kendotpm/omp-zen` with direct OMP GitHub installation; npm distribution is not required.
+- Removed manual-path configuration from the public README; native installation remembers the repository, and `omp plugin upgrade omp-zen` updates it.
 
 Runtime and regression tests were extracted from the existing optional capability's live worktree, audited against OMP 18.8.7. Historical observations are distinguished from fresh checks in [Verification](docs/VERIFICATION.md). npm publication and an OMP featured listing have not occurred.

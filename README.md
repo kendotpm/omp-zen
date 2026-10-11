@@ -32,13 +32,14 @@ Run `omp` from your project. Zen loads automatically.
 
 ## Configuration
 
-For a local checkout, **instead of installing**, add its path to `~/.omp/agent/config.yml`:
+None needed. OMP remembers the repository and loads Zen automatically.
 
-```yaml
-extensions:
-  - /full/path/to/omp-zen
+To update:
+
+```sh
+omp plugin upgrade omp-zen
 ```
 
-Keep existing entries; restart OMP.
+Restart OMP afterward.
 
 [Setup & removal](docs/SETUP.md) · [Contributing](CONTRIBUTING.md) · [MIT](LICENSE)
