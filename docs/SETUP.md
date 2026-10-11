@@ -1,6 +1,6 @@
 # OMP Zen setup
 
-The [README quickstart](../README.md#quickstart) is the short version. Start here if you're new to OMP or terminal extensions.
+The [README installation](../README.md#install) is the short version. Start here if you're new to OMP or terminal extensions.
 
 ## First time
 
@@ -14,22 +14,21 @@ omp --version
 
 OMP should report 18.8.7. Run `omp login` and follow the prompts to connect your model provider; you may need a paid account or API key. Newer OMP versions haven't been verified with Zen yet.
 
-3. Unzip the `omp-zen` folder you received if needed. There's no public download yet. Open a terminal in that folder: use your file manager's **Open in Terminal**, or type `cd `, drag the folder into the terminal, and press Enter. You should see `README.md` and `index.ts`.
-4. Install the local extension:
+3. Install OMP Zen directly from GitHub:
 
 ```sh
-omp plugin link .
+omp plugin install github:kendotpm/omp-zen
 ```
 
-The `.` means “this folder.” OMP registers a user-scoped link to it, so keep the folder in place. No build, `npm install`, or configuration editing is needed.
+OMP downloads and registers the extension for your user account. No manual checkout, build, `npm install`, or configuration editing is needed. Keep your existing project folder as-is.
 
-5. Close any open OMP sessions. Open a terminal in your project folder and run:
+4. Close any open OMP sessions. Open a terminal in your project folder and run:
 
 ```sh
 omp
 ```
 
-Zen now loads automatically. Press **Ctrl+O** whenever you want to expand or collapse tool details. Linking doesn't grant additional tool permissions.
+Zen now loads automatically. Press **Ctrl+O** whenever you want to expand or collapse tool details. Installation doesn't grant additional tool permissions.
 
 ## Check the installation
 
@@ -40,10 +39,9 @@ omp plugin list
 omp plugin doctor
 ```
 
-The list should include `omp-zen`. Restart OMP after installing; an already-open session won't import the newly linked extension. Don't also load a bundled harness copy or add a second `--extension` argument.
+The list should include `omp-zen`. Restart OMP after installing; an already-open session won't import the new extension. Don't also load a bundled harness copy or add a second `--extension` argument.
 
 ## Disable or remove Zen
-
 
 To stop loading it, then restart OMP:
 
@@ -57,7 +55,27 @@ To remove its registration:
 omp plugin uninstall omp-zen
 ```
 
-Disabling or uninstalling changes only the plugin registration; the extension folder and your project files remain in place.
+Disabling or uninstalling removes only OMP's plugin activation or installed copy; your project files are unchanged.
+
+## Update
+
+```sh
+omp plugin upgrade omp-zen
+```
+
+Restart OMP after upgrading.
+
+## Local development
+
+If you want to edit the extension itself:
+
+```sh
+git clone https://github.com/kendotpm/omp-zen.git
+cd omp-zen
+omp plugin link .
+```
+
+This registers a link to your checkout instead of a downloaded copy. Keep the checkout in place, restart OMP, and do not also install the GitHub copy. [Contributor guide](../CONTRIBUTING.md).
 
 ## If the view doesn't change
 
@@ -70,4 +88,4 @@ For a report, include the OMP version, terminal, tool, relevant configuration, a
 
 ## Public installation
 
-OMP Zen isn't publicly hosted or published to npm yet. There is no clone/download URL or working registry install command to share. [Release notes for maintainers](FEATURE-SUBMISSION.md) cover those separate steps.
+Source and releases are hosted at [kendotpm/omp-zen](https://github.com/kendotpm/omp-zen). GitHub installation is the supported public route. The package is not on npm; do not use `omp plugin install omp-zen` until an npm release exists.

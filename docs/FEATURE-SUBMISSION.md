@@ -1,6 +1,6 @@
 # Public release and OMP submission
 
-This is a release guide, not evidence of publication or a featured listing. OMP Zen is currently prepared as a local standalone extension. Public remote ownership, npm name availability, publishing authority, and any OMP submission are still pending decisions.
+OMP Zen's public source is [kendotpm/omp-zen](https://github.com/kendotpm/omp-zen), released with the owner's explicit approval. GitHub is the initial distribution route; npm publication and an OMP featured listing are separate future decisions.
 
 ## Use OMP's native package model
 
@@ -14,7 +14,7 @@ The package declares its extension through `package.json`:
 }
 ```
 
-OMP's plugin loader imports those declared extension entries. Local checkout loading needs no marketplace, global install, or private configuration. A user-scoped `omp plugin link /absolute/path/to/omp-zen` is optional and mutates the user's plugin state; restart to load the extension.
+OMP's plugin loader imports the declared extension entry. Public installation uses `omp plugin install github:kendotpm/omp-zen`; restart OMP afterward. Local linking is only a contributor alternative, not a prerequisite for users.
 
 The official [marketplace documentation](https://github.com/can1357/oh-my-pi/blob/v18.8.7/docs/marketplace.md) describes catalog discovery and Git/local sources. The [installer plumbing documentation](https://github.com/can1357/oh-my-pi/blob/v18.8.7/docs/plugin-manager-installer-plumbing.md) describes native `omp.extensions` discovery, npm installs, and local links. These documents were also consulted through OMP's built-in documentation surfaces. Check the current upstream docs before release in case the submission process has changed.
 
@@ -26,10 +26,10 @@ A single plugin does **not** need its own self-hosted marketplace catalog. An ex
 
 Use this text only alongside the actual release artifact and [coverage limits](COVERAGE.md). Do not add “official,” “featured,” universally compatible, token-saving, or context-compression claims.
 
-## Before making it public
+## Before another release
 
-- Confirm who owns the public remote and who maintains the project; do not invent a repository URL.
-- Check npm name availability at release time. `omp-zen` is the local manifest name, not a reserved or published namespace.
+- Keep the public repository owner and maintainer metadata accurate.
+- If adding npm distribution, check name availability and publishing authority first. `omp-zen` is not currently published or reserved on npm.
 - Confirm permission to release all extracted code and dependencies. MIT was selected for this repository; license choice is not confirmation of third-party rights or access to a publishing account.
 - Decide release/tag and npm account authority, credential handling, two-factor protection, and who can approve future releases. The MIT license permits reuse but does not appoint the official maintainer.
 - Run `npm ci`, `npm test`, `npm run check:package`, and the integrated package smoke. Review the packed file list for accidental profiles, credentials, private configuration, logs, or customer evidence.
@@ -37,7 +37,7 @@ Use this text only alongside the actual release artifact and [coverage limits](C
 - After packaging smoke, capture a short **redacted real demo** showing collapsed calls, Ctrl+O details, and an honest native-preserved case. Use disposable fixtures, not customer or personal session data. An illustrative text sample is not a recording.
 - Update changelog/coverage with observed evidence and make the release artifact reproducible before requesting review.
 
-These are release gates, not tasks already completed. No remote creation, push, npm publication, or feature submission is authorized by local preparation. Each public action needs explicit owner approval. npm install instructions become valid only after a release under the chosen available name is actually published:
+The initial GitHub repository and source push were explicitly approved. Further releases should keep the evidence and source in sync. npm publication and an OMP feature submission still need separate approval. An npm install command becomes valid only after that package actually exists:
 
 ```sh
 # After publication under this exact name only:

@@ -10,7 +10,7 @@ If something looks wrong, stop the session and relaunch without the `--extension
 
 ## Report a sensitive finding
 
-A public repository and private reporting channel have not yet been established. Until they are, contact the person who supplied your checkout through an existing private channel. Do not put secrets or exploit details into a public issue to obtain contact information. After a public remote exists, use its private vulnerability reporting feature if the maintainer has enabled it; otherwise ask for a private reporting route without exposing the finding.
+Use [GitHub's private vulnerability reporting](https://github.com/kendotpm/omp-zen/security/advisories/new). Do not post secrets or exploit details in a public issue. If private reporting is unavailable, ask the maintainer for a private route without disclosing the finding publicly.
 
 Include the exact versions, affected configuration, minimal reproduction, impact, and whether the issue also occurs with the extension omitted. Share only redacted evidence and use disposable fixtures. Never attach tokens, credentials, customer information, browser profiles, or complete private session logs.
 

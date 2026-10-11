@@ -4,6 +4,14 @@
   "description": "Give your OMP session a little breathing room with compact, expandable tool calls.",
   "type": "module",
   "license": "MIT",
+  "homepage": "https://github.com/kendotpm/omp-zen#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kendotpm/omp-zen.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kendotpm/omp-zen/issues"
+  },
   "main": "./index.ts",
   "exports": {
     ".": "./index.ts"

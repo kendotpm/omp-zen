@@ -14,15 +14,15 @@ A small [Oh My Pi](https://omp.sh) extension that quiets tool calls without hidi
 
 ## Install
 
-Requires **OMP 18.8.7**; Pi isn't supported. New to OMP? [Start here](docs/SETUP.md).
+Requires **OMP 18.8.7**. New to OMP? [Start here](docs/SETUP.md).
 
-Open a terminal in your `omp-zen` folder:
+Run this in your terminal:
 
 ```sh
-omp plugin link .
+omp plugin install github:kendotpm/omp-zen
 ```
 
-Keep the folder in place. Restart OMP. No build needed; not published yet.
+Restart OMP. No cloning, build, or config editing needed.
 
 ## Usage
 
@@ -32,7 +32,7 @@ Run `omp` from your project. Zen loads automatically.
 
 ## Configuration
 
-Alternatively, **instead of linking**, add your folder to `~/.omp/agent/config.yml`:
+For a local checkout, **instead of installing**, add its path to `~/.omp/agent/config.yml`:
 
 ```yaml
 extensions:

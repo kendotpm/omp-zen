@@ -70,4 +70,4 @@ The publish allowlist includes the runtime and all linked Markdown documentation
 
 This fresh workflow covers **ANSI**, native directory loading, glob, shell execution, disclosure, collapse, and narrow width. It does not revalidate Tern, debugger launch, language servers, memory backends, native approval denial, cancellation, background jobs, iframe/browser behavior, or every configured edit mode. Historical source observations and native-preserved configurations are distinguished in [coverage](COVERAGE.md).
 
-No raw authenticated transcript, browser evidence, credentials, profile, customer data, or private path is included. No public Git remote, npm release, or OMP feature listing was created.
+No raw authenticated transcript, browser evidence, credentials, profile, customer data, or private path is included. Public GitHub distribution was approved separately from the earlier local checks. npm publication and an OMP featured listing remain outside this release.
