@@ -9,6 +9,12 @@
 
 These are local checks on macOS. The repository includes Linux GitHub Actions CI, but hosted CI has not run.
 
+## Beginner README quickstart
+
+The concise README quickstart was exercised in a real OMP 18.8.7 ANSI session from the extension folder using the literal `omp --extension .` command. Its read-only glob prompt produced the compact tool line and nine TypeScript matches. Ctrl+O revealed the native file tree; collapse and Ctrl+D exit were exercised. The user-facing install/login syntax was checked against OMP help and upstream installation/provider documentation; no additional global installation or login was performed for this documentation change.
+
+README and optional setup links resolve locally. `npm run check` passed 23 tests, native loading, and the **18-file** package allowlist. The approved GIF's SHA-256 stayed `ca481dc02d611fc3be012de8366e5aee65a7f3597615e0b8d8d0f15fe4338c81`; it was not regenerated or modified.
+
 ## OMP Zen brand cutover
 
 The local repository directory and package are now `omp-zen`. After the rename, `npm run check` passed all 23 tests, the native loader smoke, and the 14-file package allowlist. The renamed `omp-zen-0.1.0.tgz` also imported successfully through OMP's real loader.
