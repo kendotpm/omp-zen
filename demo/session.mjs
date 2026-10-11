@@ -23,12 +23,12 @@ for (let step = 0; step < 6; step++) {
   if (checked.status !== 0) { process.stderr.write(checked.stderr); process.exit(1); }
   const source = readFileSync(file, "utf8");
   console.log("Batch " + process.argv[2] + " | " + file + " | syntax OK | " + Buffer.byteLength(source) + " bytes");
-  await setTimeout(650);
+  await setTimeout(150);
 }
 console.log("Batch " + process.argv[2] + " complete: 6 syntax checks passed.");
 `);
 const config = join(workspace, "recording.yml");
-writeFileSync(config, `startup:\n  quiet: true\n  checkUpdate: false\n  setupWizard: false\nautoResume: false\nmarketplace:\n  autoUpdate: off\nstatusLine:\n  preset: custom\n  leftSegments: []\n  rightSegments: []\n  showHookStatus: false\nsymbolPreset: unicode\n`);
+writeFileSync(config, `startup:\n  quiet: true\n  checkUpdate: false\n  setupWizard: false\nautoResume: false\nmarketplace:\n  autoUpdate: off\ntheme:\n  dark: dark-dracula\n  light: dark-dracula\nstatusLine:\n  preset: custom\n  leftSegments: []\n  rightSegments: []\n  showHookStatus: false\nsymbolPreset: unicode\n`);
 const system = "This is a public terminal demo with disposable fixtures. Use only native glob, grep, and bash. First glob for module-0[1-3].js in src, then grep for moduleId = 1; in src. Then execute node check.mjs 01, node check.mjs 02, node check.mjs 03, node check.mjs 04, node check.mjs 05, node check.mjs 06, node check.mjs 07, node check.mjs 08 in that exact order, one bash call at a time, waiting for each to finish. Do not combine commands or skip calls. Do not read/write other files or add commentary. At the end reply exactly: All eight batches checked. Then stop.";
 const args = ["--cwd", workspace, "--config", config, "--no-extensions", "--extension", root,
   "--no-session", "--no-title", "--no-skills", "--no-rules", "--no-lsp", "--hide-thinking", "--thinking", "off",

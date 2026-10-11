@@ -1,4 +1,4 @@
-# Real OMP/native tools throughout. Only setup and editorial cards are hidden.
+# Real OMP/native tools. Editorial cuts omit setup and model latency.
 # Run from the repository root: npm run demo
 Require node
 Require omp
@@ -16,9 +16,9 @@ Set Padding 28
 Set Margin 16
 Set BorderRadius 12
 Set WindowBar Rings
-Set Theme "Catppuccin Mocha"
+Set Theme "Dracula"
 Set Framerate 20
-Set TypingSpeed 25ms
+Set TypingSpeed 1ms
 Set CursorBlink false
 
 Hide
@@ -29,59 +29,46 @@ Enter
 Wait+Screen@120s /glob ·/
 Ctrl+o
 ScrollDown 100
-Sleep 800ms
-ScrollDown 100
 Wait+Screen@60s /node check\.mjs 01/
 Show
-# Actual shell progress scrolls through several sequential tool calls.
-Sleep 2s
-ScrollDown 10
-Sleep 2s
-ScrollDown 10
-Sleep 2s
-ScrollDown 10
-Sleep 2s
-ScrollDown 10
-Sleep 2s
-ScrollDown 10
-Sleep 2s
-ScrollDown 10
-Sleep 2s
-ScrollDown 10
-Sleep 2s
-ScrollDown 10
+Sleep 1500ms
+ScrollDown 12
+Sleep 500ms
 
-# Detach from the SAME still-running OMP session for an editorial title card.
+# Short editorial card; the same OMP session continues running detached.
 Hide
 Ctrl+b
 Type "d"
-Sleep 300ms
-Type `clear; printf '\n\n  OMP Zen\n\n  Ctrl+O\n  Keep the work. Quiet the output.\n\n'`
+Sleep 100ms
+Type `clear; printf '\n\n  OMP Zen\n\n  Ctrl+O\n\n'`
 Enter
-Sleep 300ms
+Sleep 100ms
 Show
-Sleep 3s
+Sleep 1s
 
 Hide
 Type "tmux -L omp-zen-vhs attach-session -t demo"
 Enter
-Sleep 300ms
+Sleep 150ms
 ScrollDown 100
 Show
-# The native keypress collapses the same busy session, not a second fake view.
 Ctrl+o
-Wait+Screen /Tool output expansion: disabled/
-# More real native calls continue: running -> done -> next queued/running row.
-Wait+Screen@120s /All eight batches checked\./
+Sleep 750ms
 Hide
+# Cut to later live calls instead of showing model/network waits.
+Wait+Screen@120s /node check\.mjs 06/
+Show
+Sleep 2s
+Hide
+Wait+Screen@120s /All eight batches checked\./
 Ctrl+b
 Type "d"
-Sleep 300ms
+Sleep 100ms
 Type "tmux -L omp-zen-vhs kill-server"
 Enter
-Sleep 300ms
-Type `clear; printf '\n\n  Give your OMP session a little breathing room.\n\n  OMP Zen\n  Less noise. Same tools.\n\n  omp --extension /path/to/omp-zen\n\n'`
+Sleep 100ms
+Type `clear; printf '\n\n  Give your OMP session a little breathing room.\n\n  OMP Zen\n  Less noise. Same tools.\n\n'`
 Enter
-Sleep 300ms
+Sleep 100ms
 Show
-Sleep 4s
+Sleep 2s
